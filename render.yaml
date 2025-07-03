@@ -2,6 +2,7 @@ services:
   - type: web
     name: promptcanvas-pro-api
     env: python
+    rootDir: backend
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
     envVars:
@@ -19,4 +20,5 @@ services:
         sync: false
       - key: S3_BUCKET_NAME
         sync: false
+
 

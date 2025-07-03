@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: promptcanvas-pro-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: FLASK_DEBUG
+        value: false
+      - key: TOGETHER_AI_API_KEY
+        sync: false
+      - key: CLERK_SECRET_KEY
+        sync: false
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
+      - key: S3_BUCKET_NAME
+        sync: false
+

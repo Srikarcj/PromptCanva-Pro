@@ -145,8 +145,11 @@ function AppRoutes() {
 }
 
 function App() {
+  
+
+const frontendApi = import.meta.env.VITE_CLERK_FRONTEND_API;
   return (
-    <ClerkProvider>
+    <ClerkProvider  frontendApi={frontendApi}>
       <Router>
         <AppRoutes />
       </Router>

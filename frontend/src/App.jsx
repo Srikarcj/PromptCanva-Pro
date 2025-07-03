@@ -1,9 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from '@clerk/clerk-react';
 
 // Components
-import { ClerkProvider, ProtectedRoute } from './components/auth';
+import { ProtectedRoute } from './components/auth';
 import { Layout } from './components/layout';
 import { StatsProvider } from './contexts/StatsContext';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -145,16 +145,7 @@ function AppRoutes() {
 }
 
 function App() {
-  
-
-const frontendApi = import.meta.env.VITE_CLERK_FRONTEND_API;
-  return (
-    <ClerkProvider  frontendApi={frontendApi}>
-      <Router>
-        <AppRoutes />
-      </Router>
-    </ClerkProvider>
-  );
+  return <AppRoutes />;
 }
 
 export default App;
